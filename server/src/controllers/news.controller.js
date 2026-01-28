@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://news.knowivate.com/api/latest";
+const BASE_URL = "https://news.knowivate.com/api/";
 
 /**
  * Reusable fetcher
@@ -20,7 +20,7 @@ const fetchNews = async (url, res) => {
 
 // Latest
 export const getLatestNews = async (req, res) => {
-  fetchNews(BASE_URL, res);
+  fetchNews(`${BASE_URL}/latest/`, res);
 };
 
 // Sports
