@@ -17,6 +17,9 @@ export default function NavBar() {
         <li className="text-[22px]">
           <Link to="/premium">Premium</Link>
         </li>
+        <li className="text-[22px]">
+          <Link to="/technologies">Technologies</Link>
+        </li>
       </ul>
 
       <div className="flex items-center gap-4">

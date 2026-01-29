@@ -14,7 +14,7 @@ const api = axios.create({
 ===================================================== */
 
 /**
- * Latest Hindi News
+ * Latest News
  */
 export const getLatestNewsApi = async () => {
   try {
@@ -25,3 +25,18 @@ export const getLatestNewsApi = async () => {
     return [];
   }
 };
+
+
+/**
+ * Technologies News
+ */
+
+export const getTechnologiesNewsApi = async () => {
+  try {
+    const res = await api.get("/news/technologies");
+    return res.data.news || [];
+  } catch (error) {
+    console.error(error.message);
+    return [];
+  }
+}
