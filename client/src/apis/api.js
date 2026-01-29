@@ -5,7 +5,7 @@ import axios from "axios";
 ===================================================== */
 
 const api = axios.create({
-  baseURL: "https://news.knowivate.com/api",
+  baseURL: "http://localhost:5000/api", // ✅ backend proxy
   timeout: 10000,
 });
 
@@ -14,14 +14,14 @@ const api = axios.create({
 ===================================================== */
 
 /**
- * Latest News
+ * Latest Hindi News
  */
 export const getLatestNewsApi = async () => {
   try {
-    const res = await api.get("/latest");
-    return res.data?.news || [];
+    const res = await api.get("/news/latest");
+    return res.data.news || [];
   } catch (error) {
     console.error(error.message);
-
+    return [];
   }
 };

@@ -1,8 +1,8 @@
 import express from "express";
-import { getHindiLatestNews } from "../controllers/news.controller";
+import { getLatestNews } from "../controllers/news.controller.js";
 
 const router = express.Router();
 
-router.get("/latest-hindi", getHindiLatestNews);
+router.get("/latest", getLatestNews);
 
 export default router;
