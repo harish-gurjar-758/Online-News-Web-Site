@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.lightBackground{
+    background-color: rgba(255, 228, 196, 0.64) !important;
+}

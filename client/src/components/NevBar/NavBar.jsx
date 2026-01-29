@@ -4,7 +4,7 @@ import { TiThMenuOutline } from "react-icons/ti"
 
 export default function NavBar() {
   return (
-    <div className="w-full h-20 flex items-center justify-around bg-gray-800 border text-white border-red-100">
+    <div className="w-full h-20 flex items-center justify-around bg-gray-800 border text-white border-red-100 fixed z-50">
       <h1 className="text-2xl font-bold">Apexy</h1>
 
       <ul className="flex justify-center gap-5">

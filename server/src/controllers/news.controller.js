@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const MAIN_API_URI = "https://news.knowivate.com/api"
+// const MAIN_API_URI = "https://news.knowivate.com/api"
 
 // Letest News
 export const getLatestNews = async (req, res) => {
@@ -29,8 +29,12 @@ export const getLatestNews = async (req, res) => {
 // Technologies new
 export const getTechnologiesNews = async (req, res) => {
   try {
+    // const response = await axios.get(
+    //   `${MAIN_API_URI}/technology`
+    // );
+
     const response = await axios.get(
-      `${MAIN_API_URI}/technologies`
+      "https://news.knowivate.com/api/technologies"
     );
 
     const technologiesNews = response.data?.news || [];
@@ -41,7 +45,7 @@ export const getTechnologiesNews = async (req, res) => {
       news: technologiesNews,
     });
   } catch (error) {
-    console.error("News API Error : ", error.message);
+    console.error("Technology News API Error : ", error.message);
 
     res.status(500).json({
       success: false,

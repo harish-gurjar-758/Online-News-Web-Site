@@ -34,7 +34,7 @@ export const getLatestNewsApi = async () => {
 export const getTechnologiesNewsApi = async () => {
   try {
     const res = await api.get("/news/technologies");
-    return res.data.news || [];
+    return res.data?.news || [];
   } catch (error) {
     console.error(error.message);
     return [];

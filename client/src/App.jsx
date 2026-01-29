@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import NavBar from './pages/NevBar/NavBar'
+import NavBar from './components/NevBar/NavBar'
 import LatestNews from './pages/LatestNews'
 import TechnologiesNews from './pages/TechnologiesNews'
 // import Sport from './pages/Sport'
