@@ -7,21 +7,15 @@ export default function LatestNews() {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
-    // Fetch latest news on component load
     useEffect(() => {
         const fetchNews = async () => {
             try {
                 setLoading(true)
 
-                const res = await getLatestNewsApi()
+                // ✅ API already returns array
+                const data = await getLatestNewsApi()
 
-                // ✅ CORRECT WAY (Axios response)
-                if (res?.data?.success) {
-                    setNews(res.data.news || [])
-                } else {
-                    setNews([])
-                }
-
+                setNews(data)
             } catch (err) {
                 console.error('API Error:', err)
                 setError('Failed to load news')
@@ -61,8 +55,8 @@ export default function LatestNews() {
             <h2 className="mb-4 fw-bold">Latest News 📰</h2>
 
             <div className="row g-4">
-                {news.map((item) => (
-                    <div className="col-lg-4 col-md-6 col-12" key={item._id}>
+                {news.map((item, index) => (
+                    <div className="col-lg-4 col-md-6 col-12" key={item._id || index}>
                         <div className="card h-100 shadow-sm border-0">
 
                             {/* News Image */}
