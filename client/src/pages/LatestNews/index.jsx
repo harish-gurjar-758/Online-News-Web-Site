@@ -38,8 +38,8 @@ export default function LatestNews() {
                 {error}
             </div>
         )
-    }
-
+    };
+         
     // No news case
     if (news.length === 0) {
         return (
